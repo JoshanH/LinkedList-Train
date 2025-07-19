@@ -21,11 +21,15 @@ def printTrain(head):
 
     # draw each node's data inside of a ascii art caridge
     while (current != None):
-        line1 += " ____=======_||____"
-        line2 += " |                 |"
-        line3 += f" |  {str(current.data)[:5]}          |"
-        line4 += "_|_________________|"
-        line5 += " 'o!o         o!o`  "
+        text = str(current.data)[:5]
+        line1 +=  " ,____=======_||____"
+        line2 +=  " |                 |"
+        line3 += f" |      {text}"
+        line4 +=  "_|_________________|"
+        line5 +=  " 'o!o         o!o`  "
+
+        # ensure whitespace is correctly formatted for data cont line
+        line3 += " " * (5 - len(text)) + "      |"
 
         current = current.next
 
