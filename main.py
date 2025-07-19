@@ -61,7 +61,7 @@ def handleInput(train: Train):
     handleInput(train)
 
 
-# initialise liked list Train
+# initialise liked list
 train = Train()
 
 # start taking input
