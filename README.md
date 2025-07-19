@@ -1,4 +1,4 @@
-**Python Linked List Train Demo**
+## Python Linked List Train Demo
 
 A simple command line app to display what linked lists are and how they work.
 
