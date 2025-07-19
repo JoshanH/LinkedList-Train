@@ -125,23 +125,37 @@ def removeIndex(head, index):
 def reverseList(head):
     ''' reverses an input linked list '''
 
-    # set current node to head and previous node to null
-    current = head
-    previous = None
+    # set initial pointers 
+    prev = head
+    curr = head.next
 
-    while (current.next != None):
+    # handle first node
+    if (curr != None):
+        next = curr.next # store next node
+        curr.next = None # nullify .next pointer
+        # increment all pointers
+        prev = curr
+        curr = next
+        next = next.next
+    else:
+        # list empty, no changes needed
+        printTrain(head)
 
-        nextNode = current.next
-        current.next = previous
-
-        # move pointers one position ahead
-        previous = current
-        current = nextNode
+    # handle rest of list
+    while (curr.next != None):
+        curr.next = prev # reverse node .next pointer
+        # increment all pointers
+        prev = curr
+        curr = next
+        next = next.next
     
-    # set new head of linked list
-    head = previous
+    # handle final node
+    curr.next = prev
+    head.next = curr
+
 
     printTrain(head)
+
 
 def handleInput(head):
     ''' handles user input and draw CLI interface '''
