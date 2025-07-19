@@ -33,7 +33,7 @@ class Train:
             whiteSpcBuff = (CARRAGE_LEN - textLen)//2
 
             line1 +=  " ,_____=======_||____"
-            line2 +=  " |                  |"
+            line2 +=  " |               -> |"
             # ensure whitespace is correctly formatted for data cont line
             line3 += " |" + (" " *  whiteSpcBuff) + text + (" " * whiteSpcBuff) + "|"
             line4 +=  "_|__________________|"
