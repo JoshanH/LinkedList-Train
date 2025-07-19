@@ -37,7 +37,7 @@ class Train:
             # ensure whitespace is correctly formatted for data cont line
             line3 += " |" + (" " *  whiteSpcBuff) + text + (" " * whiteSpcBuff) + "|"
             line4 +=  "_|__________________|"
-            line5 +=  " 'o!o          o!o` "
+            line5 +=  "  'o!o          o!o` "
 
             # increment pointer
             current = current.next
