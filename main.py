@@ -25,7 +25,7 @@ def handleInput(train: Train):
         handleInput(train)
         
     elif (userInput[COMMAND_IND] == "add"):
-        train.add(userInput[1])
+        train.add(userInput[ARG_2_IND])
         train.print()
 
     elif (userInput[COMMAND_IND] == "remove"):
