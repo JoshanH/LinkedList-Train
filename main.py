@@ -48,7 +48,6 @@ def handleInput(train: Train):
         train.print()
     
     elif (userInput[COMMAND_IND] == "clear"):
-        # let garbage collector delete all nodes of linked list
         train.clear()
         train.print()
 
