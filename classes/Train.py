@@ -1,8 +1,5 @@
 from .Carriage import Carriage
 
-MAX_DATA_LEN = 16
-CARRAGE_LEN = 18
-
 class Train:
     def __init__(self, carriage: Carriage = None):
         self.head = carriage
@@ -10,40 +7,33 @@ class Train:
     def print(self):
         ''' prints the conteants of the linked list in an ascii train '''
 
-        # initilaise lines of train ascii art
+        # initialize lines of train ascii art
         line1 = "\n    o x o x o x o . . .   "
         line2 =   "   o      _____           "
         line3 =   " .][__n_n_|DD[  ====_____ "
         line4 =   ">(________|__|_[_________]"
         line5 =   "_/oo OOOOO oo`  ooo   ooo "
 
+        # places each line of the train's drawing space into an array
+        drawSpace = [line1, line2, line3, line4, line5]
+
         # skips drawing head node
         current = self.head
 
-        # draw each node's data inside of a ascii art caridge
+        # draw each carriage's data inside of a ascii art carriage
         while (current != None):
-            text = str(current.data)[:MAX_DATA_LEN]
-            textLen = len(text)
-
-            # check if odd length
-            if (textLen % 2 == 1):
-                # make length even with whitespace
-                text += " "
-
-            whiteSpcBuff = (CARRAGE_LEN - textLen)//2
-
-            line1 +=  " ,_____=======_||____"
-            line2 +=  " |               -> |"
-            # ensure whitespace is correctly formatted for data cont line
-            line3 += " |" + (" " *  whiteSpcBuff) + text + (" " * whiteSpcBuff) + "|"
-            line4 +=  "_|__________________|"
-            line5 +=  "  'o!o          o!o` "
+            # print the current carriage
+            current.print(drawSpace)
 
             # increment pointer
             current = current.next
 
         # print all lines of train ascii art
-        print(f"{line1}\n{line2}\n{line3}\n{line4}\n{line5}\n")
+        print(drawSpace[0])
+        print(drawSpace[1])
+        print(drawSpace[2])
+        print(drawSpace[3])
+        print(drawSpace[4])
 
     
     def add(self, data):

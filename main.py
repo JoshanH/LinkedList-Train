@@ -25,7 +25,7 @@ def handleInput(train: Train):
         handleInput(train)
         
     elif (userInput[COMMAND_IND] == "add"):
-        # if the input is blank
+        # check if the input is blank
         if (len(userInput) < 2):
             train.add(' ')
         else:
@@ -34,7 +34,7 @@ def handleInput(train: Train):
         train.print()
 
     elif (userInput[COMMAND_IND] == "remove"):
-        
+
         if (userInput[ARG_2_IND] == "data"):
             if (train.removeData(userInput[ARG_3_IND])):
                 train.print()
